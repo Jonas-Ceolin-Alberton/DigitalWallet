@@ -1,0 +1,18 @@
+<div class="container">
+    <div  style="width: 25%; height: 100%; margin: auto" fxLayout="column" fxLayoutAlign="center center">
+        <img src="././assets/logo.png" style="margin-bottom: 11px">
+        <div class="form-login" fxLayout="column">
+            <form name="form">
+                    <mat-form-field  style="width: 100%">
+                        <input matInput placeholder="e-mail" type="email" name="nome" [(ngModel)]="usuario.nome">
+                    </mat-form-field>
+
+                    <mat-form-field style="width: 100%">
+                        <input matInput type="password" placeholder="senha" name="senha" [(ngModel)]="usuario.senha">
+                    </mat-form-field>
+            </form>
+            <button mat-raised-button class="button-login" (click)="openApp()" >Login</button>
+            <div fxLayoutAlign="center center" (click)="novoUsuario()" class="button-cadastro">Criar conta</div>
+        </div>
+    </div>
+</div>
