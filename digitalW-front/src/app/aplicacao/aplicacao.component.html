@@ -1,7 +1,17 @@
-<div class="full">
-    <div class="sidenav-close" id="sidenav" fxLayout="column" >
-            <button mat-raised-button style="width: 30px" (click)="changeClassSidenav()" >Login</button>
+<div class="full" fxLayout="raw">
+    <div class="tollbar">
+        <button mat-icon-button style="margin: 6px 20px;" (click)="changeClassSidenav()">
+            <i class="material-icons">menu</i>
+        </button>
+        
+        <button mat-icon-button style="margin: 6px 20px;float: right" (click)="logout()">
+            <i class="material-icons">input</i>
+        </button>
+
     </div>
     <div class="container">
+        <div [className]=" status ? 'sidenav-open' : 'sidenav-close'">
+
+        </div>
     </div>
 <div>

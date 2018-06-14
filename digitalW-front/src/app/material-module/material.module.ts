@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     MatInputModule,
     NoopAnimationsModule,
-    FormsModule
+    FormsModule,
+    MatSidenavModule
   ],
   declarations: [
   ],
@@ -23,7 +25,8 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     MatInputModule,
     NoopAnimationsModule,
-    FormsModule
+    FormsModule,
+    MatSidenavModule
   ]
 })
 export class MaterialModule { }

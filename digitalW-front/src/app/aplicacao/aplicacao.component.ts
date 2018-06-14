@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-aplicacao',
@@ -6,15 +7,17 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./aplicacao.component.css']
 })
 export class AplicacaoComponent implements OnInit {
-
-    constructor() { }
+    status = true;
+    constructor(private router: Router) { }
 
     ngOnInit() {
     }
 
     changeClassSidenav() {
-        document.getElementById("sidenav").classList.remove("sidenav-close");
-        document.getElementById("sidenav").classList.add("sidenav-open");
+      this.status = !this.status;
     }
 
+    logout() {
+        this.router.navigate(['/login']);
+    }
 }
