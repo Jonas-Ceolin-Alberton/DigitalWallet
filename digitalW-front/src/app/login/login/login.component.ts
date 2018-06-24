@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
     }
 
     openApp() {
-        this.router.navigate(['app']);
+        this.router.navigate(['app/movimentacoes']);
     }
 
     novoUsuario() {

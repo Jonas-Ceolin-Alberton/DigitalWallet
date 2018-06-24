@@ -1,0 +1,17 @@
+<div class="form-card">
+<form [formGroup]="form">
+    <div fxLayout="raw">
+            <mat-form-field  style="width: 100%">
+                <input matInput placeholder="Valor" type="number" name="valor" [(ngModel)]="movimentacao.valor">
+            </mat-form-field>
+
+            <mat-form-field>
+                    <input matInput placeholder="Data" formControlName="data" [matDatepicker]="data" [(ngModel)]="movimentacao.data">
+                    <mat-datepicker-toggle matSuffix [for]="data"></mat-datepicker-toggle>
+                    <mat-datepicker  #data></mat-datepicker>
+                </mat-form-field>
+
+    </div>
+    <button mat-raised-button color="primary" style="font-weight: bold" (click)="pesquisar(filtroConsultaDivida)">Salvar</button>
+</form>
+<div>

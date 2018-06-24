@@ -7,6 +7,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatInputModule,
     NoopAnimationsModule,
     FormsModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatDatepickerModule
   ],
   declarations: [
   ],
@@ -26,7 +28,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatInputModule,
     NoopAnimationsModule,
     FormsModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatDatepickerModule
   ]
 })
 export class MaterialModule { }

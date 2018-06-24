@@ -1,17 +1,19 @@
-<div class="full" fxLayout="raw">
-    <div class="tollbar">
-        <button mat-icon-button style="margin: 6px 20px;" (click)="changeClassSidenav()">
-            <i class="material-icons">menu</i>
-        </button>
-        
-        <button mat-icon-button style="margin: 6px 20px;float: right" (click)="logout()">
-            <i class="material-icons">input</i>
-        </button>
+<div class="tollbar">
+    <button mat-icon-button style="margin: 6px 16px;" (click)="changeClassSidenav()">
+        <i class="material-icons">menu</i>
+    </button>
 
-    </div>
-    <div class="container">
-        <div [className]=" status ? 'sidenav-open' : 'sidenav-close'">
+    <button mat-icon-button style="margin: 6px 20px;float: right" (click)="logout()">
+        <i class="material-icons">input</i>
+    </button>
 
-        </div>
+</div>
+<div class="app-sidenav-container">
+    <div class="app-sidenav" [ngClass]="{'app-sidenav-close': status}">
+        <app-menu-principal></app-menu-principal>
     </div>
-<div>
+
+    <div class="app-container">
+        <router-outlet></router-outlet>
+    </div>
+</div>
