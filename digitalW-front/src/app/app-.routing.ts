@@ -1,3 +1,4 @@
+import { ReceitasComponent } from './receitas/receitas.component';
 import { MovimentacaoComponent } from './movimentacao/movimentacao.component';
 import { DespesaComponent } from './despesa/despesa.component';
 import { AplicacaoComponent } from './aplicacao/aplicacao.component';
@@ -5,7 +6,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login/login.component';
 import { AppComponent } from './app.component';
 import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
-import { ReceitaComponent } from './receita/receita.component';
 import { RelatorioComponent } from './relatorio/relatorio.component';
 
 export const appRoutes: Routes = [
@@ -15,7 +15,7 @@ export const appRoutes: Routes = [
         children: [
             {
                 path: 'receitas',
-                component: ReceitaComponent
+                component: ReceitasComponent
             },
             {
                 path: 'despesas',

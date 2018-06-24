@@ -4,11 +4,9 @@ export class Movimentacao {
     tipoMovimentacao: TipoMovimentacao
     data: Date;
     descricao: string;
-
-    editando: boolean;
 }
 
 export enum TipoMovimentacao {
-    RECEITA = 'RECEITA',
-    DESPESA = 'DESPESA'
+    RECEITA = 'Receita',
+    DESPESA = 'Despesa'
 }

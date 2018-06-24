@@ -1,17 +1,31 @@
 <div class="form-card">
-<form [formGroup]="form">
-    <div fxLayout="raw">
-            <mat-form-field  style="width: 100%">
-                <input matInput placeholder="Valor" type="number" name="valor" [(ngModel)]="movimentacao.valor">
-            </mat-form-field>
+    <button mat-icon-button class="button-close" (click)="fecharCard()">
+        <i class="material-icons icon">close</i>
+    </button>
+    <form [formGroup]="form">
+        <div fxLayout="raw" fxLayoutGap="20px">
+                <mat-form-field  fxFlex="20%">
+                    <input matInput placeholder="Valor" type="number" formControlName="valor" required [(ngModel)]="movimentacao.valor">
+                </mat-form-field>
 
-            <mat-form-field>
-                    <input matInput placeholder="Data" formControlName="data" [matDatepicker]="data" [(ngModel)]="movimentacao.data">
+                <mat-form-field fxFlex="20%">
+                    <input matInput placeholder="Data" formControlName="data" required [matDatepicker]="data" [(ngModel)]="movimentacao.data">
                     <mat-datepicker-toggle matSuffix [for]="data"></mat-datepicker-toggle>
                     <mat-datepicker  #data></mat-datepicker>
                 </mat-form-field>
 
-    </div>
-    <button mat-raised-button color="primary" style="font-weight: bold" (click)="pesquisar(filtroConsultaDivida)">Salvar</button>
-</form>
+                <mat-form-field fxFlex="20%">
+                    <mat-select placeholder="Tipo"  formControlName="tipo"  [(ngModel)]="movimentacao.tipoMovimentacao">
+                            <mat-option value="Receita">Receita</mat-option>
+                            <mat-option value="Despesa">Despesa</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field  fxFlex="40%">
+                    <input matInput placeholder="Descrição"  type="text" formControlName="descricao" [(ngModel)]="movimentacao.descricao">
+                </mat-form-field>
+
+        </div>
+        <button mat-raised-button color="primary" style="font-weight: bold" (click)="pesquisar(filtroConsultaDivida)">Salvar</button>
+    </form>
 <div>

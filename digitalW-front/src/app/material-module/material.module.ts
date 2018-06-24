@@ -7,7 +7,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   imports: [
@@ -18,7 +18,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     NoopAnimationsModule,
     FormsModule,
     MatSidenavModule,
-    MatDatepickerModule
+    MatSelectModule,
   ],
   declarations: [
   ],
@@ -29,7 +29,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     NoopAnimationsModule,
     FormsModule,
     MatSidenavModule,
-    MatDatepickerModule
+    MatSelectModule
+    
   ]
 })
 export class MaterialModule { }

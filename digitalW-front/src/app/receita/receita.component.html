@@ -1,8 +1,0 @@
-<div class="lista">
-    <p>Receitas<p>
-    <div *ngFor="let receita of receitas">
-        <app-card  [movimentacao]="receita" (onClickEditar)="editarReceita($event)" *ngIf="!receita.editando"></app-card>
-        <app-cadastro-movimentacao *ngIf="receita.editando"></app-cadastro-movimentacao>
-    </div>
-
-</div>
