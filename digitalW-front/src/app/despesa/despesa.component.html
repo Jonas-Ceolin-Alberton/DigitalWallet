@@ -1,3 +1,21 @@
-<div class="lista">
-  Despesa
-  </div>
+<div class="card" fxLayoutAlign="start center" *ngIf="!editando">
+  <div fxLayout="raw" fxLayoutAlign="start center"  style="width: 100%;" fxLayoutGap="30px">
+       <i class="material-icons icon" style="width: 5%;">arrow_downward</i>
+       <span style="font-weight: bold; width: 15%;">{{movimentacao.valor | currency:'BRL':true}}</span>
+       <span style="width: 10%;">{{movimentacao.data| date: 'dd/MM/yyyy'}}</span>
+       <span style="width: 70%;">{{movimentacao.descricao}}</span>
+   </div>
+  
+   <div fxLayoutAlign="end center" class="buttons">
+       <button mat-icon-button  fxLayoutAlign="center center">
+           <i  style="font-size: 18px!important" class="material-icons icon" (click)="editar()">edit</i>
+       </button>
+   </div>
+</div>
+   
+<app-cadastro-movimentacao  *ngIf="editando" 
+                          [movimentacaoEdicao]="movimentacao" 
+                          (fecharCardEvent)="fecharEdicao()"
+                          (depoisDeSalvar)="fecharEdicao()"
+                          (depoisDeExcluir)="remover($event)">
+</app-cadastro-movimentacao>

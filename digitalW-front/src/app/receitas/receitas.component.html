@@ -1,4 +1,14 @@
 <div class="lista">
-    <p>Receitas<p>
-    <app-receita *ngFor="let receita of movimentacoes" [movimentacao]="receita"></app-receita>
-</div>
+        <p>Receitas<p>
+    
+        <app-cadastro-movimentacao *ngIf="cadastrarMovimentacao"  (depoisDeSalvar)="adicionarALista($event)" (fecharCardEvent)="fecharCadastro()">
+        </app-cadastro-movimentacao>
+    
+        <app-receita *ngFor="let receita of movimentacoes" [movimentacao]="receita"></app-receita>
+    </div>
+    
+    <button mat-fab class="button-add" color="primary"  (click)="novaMovimentacao()">
+            <i class="material-icons icon" >add</i>
+    </button>
+    
+    

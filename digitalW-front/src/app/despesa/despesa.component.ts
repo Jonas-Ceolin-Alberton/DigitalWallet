@@ -1,15 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Movimentacao } from './../models/movimentacao';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-despesa',
-  templateUrl: './despesa.component.html',
-  styleUrls: ['./despesa.component.css']
+    selector: 'app-despesa',
+    templateUrl: './despesa.component.html',
+    styleUrls: ['./despesa.component.css']
 })
 export class DespesaComponent implements OnInit {
 
-  constructor() { }
+    editando = false;
+    @Input() movimentacao: Movimentacao;
+    @Output() removerManifestacaoEvent: EventEmitter<any> = new EventEmitter();
+    constructor() { }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
+
+    editar(): void {
+        this.editando = true;
+    }
+
+    fecharEdicao(): void {
+        this.editando = false;
+    }
+
+    remover(movimentacao: Movimentacao): void {
+        this.removerManifestacaoEvent.emit(movimentacao);
+    }
 
 }

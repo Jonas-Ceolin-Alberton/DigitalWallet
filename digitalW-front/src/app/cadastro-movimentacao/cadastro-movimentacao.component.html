@@ -26,6 +26,9 @@
                 </mat-form-field>
 
         </div>
-        <button mat-raised-button color="primary" style="font-weight: bold" (click)="pesquisar(filtroConsultaDivida)">Salvar</button>
+        <button mat-raised-button color="primary" style="font-weight: bold" (click)="salvar()">Salvar</button>
+        <button *ngIf="movimentacaoEdicao" mat-icon-button style="position: relative;float: right; margin-right: -9px;"  (click)="excluir()">
+                <i class="material-icons icon">delete</i>
+        </button>
     </form>
 <div>

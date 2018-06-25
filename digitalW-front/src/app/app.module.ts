@@ -1,3 +1,4 @@
+import { MovimentacaoService } from './services/movimentacao.service';
 import { CommonModule, registerLocaleData } from '@angular/common';
 import { MaterialModule } from './material-module/material.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -22,6 +23,10 @@ import { MatMomentDateModule, MomentDateAdapter } from '@angular/material-moment
 import localePt from '@angular/common/locales/pt';
 import { ReceitasComponent } from './receitas/receitas.component';
 import { ReceitaComponent } from './receitas/receita/receita.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+import { DespesasComponent } from './despesas/despesas.component';
+import { UsuarioService } from './services/usuario.service';
 
 
 export const MY_FORMATS = {
@@ -51,7 +56,8 @@ export const MY_FORMATS = {
         RelatorioComponent,
         CurrencyFormatPipe,
         CadastroMovimentacaoComponent,
-        ReceitasComponent
+        ReceitasComponent,
+        DespesasComponent
     ],
     imports: [
         BrowserModule,
@@ -60,7 +66,8 @@ export const MY_FORMATS = {
         routing,
         CommonModule,
         ReactiveFormsModule,
-        MatDatepickerModule
+        MatDatepickerModule,
+        HttpModule
 
     ],
     providers: [
@@ -69,6 +76,8 @@ export const MY_FORMATS = {
         { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
         { provide: LOCALE_ID, useValue: 'pt' },
         { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS },
+        UsuarioService,
+        MovimentacaoService
     ],
     bootstrap: [AppComponent]
 })

@@ -1,3 +1,4 @@
+import { DespesasComponent } from './despesas/despesas.component';
 import { ReceitasComponent } from './receitas/receitas.component';
 import { MovimentacaoComponent } from './movimentacao/movimentacao.component';
 import { DespesaComponent } from './despesa/despesa.component';
@@ -19,7 +20,7 @@ export const appRoutes: Routes = [
             },
             {
                 path: 'despesas',
-                component: DespesaComponent
+                component: DespesasComponent
             },
             {
                 path: 'movimentacoes',

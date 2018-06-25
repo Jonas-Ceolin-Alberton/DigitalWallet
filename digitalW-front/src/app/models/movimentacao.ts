@@ -4,6 +4,8 @@ export class Movimentacao {
     tipoMovimentacao: TipoMovimentacao
     data: Date;
     descricao: string;
+
+    idUsuario: number;
 }
 
 export enum TipoMovimentacao {

@@ -3,6 +3,9 @@ package com.digital.api.controllers;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,8 +24,10 @@ public class UsuarioController {
 	private UsuarioService usuarioService;
 	
 	@GetMapping(path = "/{id}")
-	public Optional<Usuario> listarPorId(@PathVariable(name = "id") Long id) {
-		return this.usuarioService.buscarPorId(id);
+	public ResponseEntity<Optional<Usuario>> listarPorId(@PathVariable(name = "id") Long id) {
+		return ResponseEntity.ok().header("Access-Control-Allow-Origin", "*")
+				.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+				.body(this.usuarioService.buscarPorId(id));
 	}
 	
 	@PostMapping
@@ -30,9 +35,11 @@ public class UsuarioController {
 		return this.usuarioService.salvar(usuario);
 	}
 	
+	@CrossOrigin(exposedHeaders="Access-Control-Allow-Origin")
 	@PostMapping(path= "/autenticar")
-	public Usuario autenticar(@RequestBody Usuario usuario) {
-		return this.usuarioService.autenticar(usuario);
+	public ResponseEntity<Usuario> autenticar(@RequestBody Usuario usuario) {
+		return ResponseEntity.ok()
+				.body(this.usuarioService.autenticar(usuario));
 	}
 	
 	

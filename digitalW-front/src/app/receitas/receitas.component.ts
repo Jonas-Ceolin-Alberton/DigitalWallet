@@ -1,3 +1,4 @@
+import { MovimentacaoService } from './../services/movimentacao.service';
 import { Component, OnInit } from '@angular/core';
 import { Movimentacao, TipoMovimentacao } from '../models/movimentacao';
 
@@ -7,27 +8,31 @@ import { Movimentacao, TipoMovimentacao } from '../models/movimentacao';
     styleUrls: ['./receitas.component.css']
 })
 export class ReceitasComponent implements OnInit {
-
+    cadastrarMovimentacao = false;
     movimentacoes: Array<Movimentacao> = new Array();
-    constructor() { }
+    constructor(private movimentacaoService: MovimentacaoService) { }
 
     ngOnInit() {
-
-        let movim: Movimentacao = new Movimentacao();
-        movim.data = new Date();
-        movim.descricao = 'Pesque pague beira rio';
-        movim.tipoMovimentacao = TipoMovimentacao.RECEITA;
-        movim.valor = 50000;
-
-
-        let teste: Movimentacao = new Movimentacao();
-        teste.data = new Date();
-        teste.descricao = 'Pesque pague beira rio';
-        teste.tipoMovimentacao = TipoMovimentacao.RECEITA;
-        teste.valor = 50000;
-
-        this.movimentacoes.push(movim);
-        this.movimentacoes.push(teste);
-      
+        this.buscarDespesasPorUsuarios();
     }
+
+    buscarDespesasPorUsuarios() {
+        this.movimentacaoService.listarReceitasPorIdUsuario().subscribe(
+            data => this.movimentacoes = data,
+            erro => console.log('erro', erro)
+        );
+    }
+
+    adicionarALista(movimentacao: Movimentacao) {
+        this.movimentacoes.unshift(movimentacao);
+        this.fecharCadastro();
+      }
+    
+      novaMovimentacao() {
+        this.cadastrarMovimentacao = true;
+      }
+    
+      fecharCadastro() {
+        this.cadastrarMovimentacao = false;
+      }
 }

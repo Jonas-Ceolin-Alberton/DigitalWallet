@@ -1,0 +1,15 @@
+<div class="lista">
+    <p>Despesas<p>
+
+    <app-cadastro-movimentacao *ngIf="cadastrarMovimentacao"
+                                (depoisDeSalvar)="adicionarALista($event)"
+                                (fecharCardEvent)="fecharCadastro()">
+    </app-cadastro-movimentacao>
+
+    <app-despesa *ngFor="let despesa of movimentacoes" [movimentacao]="despesa" (removerManifestacaoEvent)="removerElementoDaLista($event)"></app-despesa>
+</div>
+
+<button mat-fab class="button-add" color="primary"  (click)="novaMovimentacao()">
+        <i class="material-icons icon" >add</i>
+</button>
+
