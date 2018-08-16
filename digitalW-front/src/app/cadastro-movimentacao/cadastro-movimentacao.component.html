@@ -5,7 +5,7 @@
     <form [formGroup]="form">
         <div fxLayout="raw" fxLayoutGap="20px">
                 <mat-form-field  fxFlex="20%">
-                    <input matInput placeholder="Valor" type="number" formControlName="valor" required [(ngModel)]="movimentacao.valor">
+                    <input matInput placeholder="Valor"  [pdMaskCurrency]="{prefixo:'R$'}" formControlName="valor" required [(ngModel)]="movimentacao.valor">
                 </mat-form-field>
 
                 <mat-form-field fxFlex="20%">

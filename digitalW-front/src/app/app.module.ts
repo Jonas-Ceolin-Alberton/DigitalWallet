@@ -27,7 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { DespesasComponent } from './despesas/despesas.component';
 import { UsuarioService } from './services/usuario.service';
-
+import { PdMaskCurrencyDirective } from './currency.directive';
 
 export const MY_FORMATS = {
     parse: {
@@ -57,7 +57,8 @@ export const MY_FORMATS = {
         CurrencyFormatPipe,
         CadastroMovimentacaoComponent,
         ReceitasComponent,
-        DespesasComponent
+        DespesasComponent,
+        PdMaskCurrencyDirective
     ],
     imports: [
         BrowserModule,

@@ -24,13 +24,14 @@ export class LoginComponent implements OnInit {
     }
 
     openApp() {
-        this.usuarioService.autenticar(this.usuario).subscribe(
-            data => {
-               this.usuarioService.adicionarAoLocalhost(data);
-                this.router.navigate(['app/movimentacoes']);
-            },
-            erro => alert("Dados invalidos")
-        )
+        // this.usuarioService.autenticar(this.usuario).subscribe(
+        //     data => {
+        //        this.usuarioService.adicionarAoLocalhost(data);
+        //         this.router.navigate(['app/movimentacoes']);
+        //     },
+        //     erro => alert("Dados invalidos")
+        // )
+        this.router.navigate(['app/movimentacoes']);
     }
 
     novoUsuario() {
